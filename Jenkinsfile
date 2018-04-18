@@ -9,7 +9,7 @@ pipeline {
     stage('test') {
       steps {
         sh 'mvn test'
-        archiveArtifacts ' target/surefire-reports/*.xml'
+        junit 'target/surefire-reports/*.xml'
       }
     }
     stage('package') {
